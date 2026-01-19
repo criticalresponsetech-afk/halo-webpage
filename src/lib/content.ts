@@ -2,7 +2,6 @@ export const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Services', href: '/services' },
   { label: 'About', href: '/about' },
-  { label: 'Book a Call', href: '/call' },
   { label: 'Contact', href: '/contact' },
   { label: 'Careers', href: '/careers' },
   { label: 'FAQ', href: '/faq' },

@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { navLinks } from '../lib/content'
 import { cn } from '../lib/utils'
-import { Button } from './Button'
 
 export function Header() {
   const location = useLocation()
-  const navigate = useNavigate()
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
@@ -39,11 +37,6 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="hidden lg:block">
-          <Button size="md" className="shadow-lg" onClick={() => navigate('/call')}>
-            Book a Call
-          </Button>
-        </div>
         <button
           type="button"
           className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-white lg:hidden"
@@ -70,11 +63,6 @@ export function Header() {
                 </Link>
               ))}
             </nav>
-            <div className="mt-4">
-              <Button className="w-full" onClick={() => navigate('/call')}>
-                Book a Call
-              </Button>
-            </div>
           </div>
         </div>
       )}
