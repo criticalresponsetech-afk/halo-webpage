@@ -5,7 +5,7 @@ import { Card } from '../components/Card'
 import { Input } from '../components/Input'
 import { Section } from '../components/Section'
 import { Textarea } from '../components/Textarea'
-import { contactDetails, trustSignals } from '../lib/content'
+import { contactDetails, heroImageUrl, trustSignals } from '../lib/content'
 import { submitLead } from '../lib/leads'
 import { usePageTitle } from '../lib/seo'
 import { useToast } from '../components/Toast'
@@ -64,10 +64,11 @@ function ContactPage() {
   return (
     <>
       <Section
-        eyebrow="Contact"
-        title="24/7 dispatch and leadership support"
-        description="Share your needs and timeline. HALO Security responds quickly with next steps."
-        className="pt-10"
+        title="Contact"
+        className="bg-base bg-cover bg-center pt-10"
+        style={{
+          backgroundImage: `linear-gradient(to bottom, rgba(7, 10, 18, 0.95), rgba(7, 10, 18, 0.88), rgba(7, 10, 18, 0.92)), url('${heroImageUrl}')`,
+        }}
       >
         <div className="grid gap-8 lg:grid-cols-3">
           <Card className="lg:col-span-2 border-white/10 bg-white/5 p-6 sm:p-8">

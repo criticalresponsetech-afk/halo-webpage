@@ -11,7 +11,13 @@ export interface QuoteLeadPayload {
   fullName: string
   email: string
   phone: string
-  serviceType: 'Private Security' | 'Armed Security' | 'Mobile Patrols'
+  serviceType:
+    | 'Private Security'
+    | 'Armed Security'
+    | 'Mobile Patrols'
+    | 'Healthcare Security'
+    | 'Courthouse Security'
+    | 'Patrol Operations'
   propertyType: 'Residential' | 'Commercial' | 'Construction' | 'Industrial'
   location: string
   contactMethod: 'Phone' | 'Email'

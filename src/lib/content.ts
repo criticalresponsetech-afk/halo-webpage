@@ -1,19 +1,21 @@
 export const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Services', href: '/services' },
-  { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
-  { label: 'Careers', href: '/careers' },
-  { label: 'FAQ', href: '/faq' },
-  { label: 'Testimonials', href: '/testimonials' },
 ]
 
+export const brandName = 'HALO Protection Services'
+
+export const heroImageUrl =
+  'https://images.unsplash.com/photo-1436450412740-6b988f486c6b?auto=format&fit=crop&w=1600&q=80'
+
 export const trustSignals = [
-  'Licensed & insured',
-  'Professionally trained guards',
-  'Armed certification',
-  '24/7 availability',
-  'Rapid response focus',
+  'WA State Licensed & Insured',
+  'Professional Security Services',
+  'Reliable • Professional • Experienced',
+  'Healthcare',
+  'Courthouse',
+  'Patrol Operations',
 ]
 
 export const services = [
@@ -50,6 +52,39 @@ export const services = [
       'Real-time incident communication',
     ],
   },
+  {
+    name: 'Healthcare Security',
+    summary:
+      'Professional security services for healthcare facilities where calm presence, controlled access, and reliable response matter.',
+    features: [
+      'Hospital and clinic access control',
+      'Staff, patient, and visitor assistance',
+      'Incident response and de-escalation support',
+      'Professional reporting and site coordination',
+    ],
+  },
+  {
+    name: 'Courthouse Security',
+    summary:
+      'Reliable courthouse protection with professional presence, controlled entry support, and accountable operations.',
+    features: [
+      'Entry screening and controlled access',
+      'Courtroom and public-area security support',
+      'Coordination with facility staff and officials',
+      'Clear reporting and professional presence',
+    ],
+  },
+  {
+    name: 'Patrol Operations',
+    summary:
+      'Structured patrol coverage for active properties that need consistent visibility, scheduled checks, and fast escalation.',
+    features: [
+      'Scheduled and randomized patrol routes',
+      'After-hours checks and perimeter verification',
+      'Alarm response and incident escalation',
+      'Daily activity logs and supervisor oversight',
+    ],
+  },
 ]
 
 export const industries = [
@@ -78,90 +113,9 @@ export const metrics = [
   { label: 'Team certification', value: '100% armed eligible' },
 ]
 
-export const faqItems = [
-  {
-    question: 'Are your guards licensed and insured?',
-    answer:
-      'Yes. Every HALO Security professional is fully licensed and insured, with background checks, advanced training, and ongoing skills refreshers.',
-  },
-  {
-    question: 'Can you customize post orders for my site?',
-    answer:
-      'Absolutely. We build site-specific post orders in collaboration with you, focusing on access control, patrol cadence, escalation paths, and reporting expectations.',
-  },
-  {
-    question: 'How quickly can service start?',
-    answer:
-      'For most requests we can deploy within 24–72 hours after a short assessment. Rapid deployments are available for urgent needs.',
-  },
-  {
-    question: 'Do you provide incident reporting?',
-    answer:
-      'Yes. We deliver concise incident summaries and shift reports. We can integrate with your preferred reporting cadence and format.',
-  },
-  {
-    question: 'What areas do you serve?',
-    answer:
-      'We cover the metro area and surrounding counties. Multi-site and regional deployments are available on request.',
-  },
-]
-
-export const testimonials = [
-  {
-    name: 'Morgan Hill',
-    role: 'Facilities Director, Northline Logistics',
-    quote:
-      'HALO Security stabilized our distribution yard within days. The armed team is disciplined, communicative, and professional with our staff and vendors.',
-  },
-  {
-    name: 'Jasmine Patel',
-    role: 'Property Manager, Vertex Commercial',
-    quote:
-      'Their patrol supervisors are proactive and thorough. We get concise reports and immediate calls when something looks off. Response times have been excellent.',
-  },
-  {
-    name: 'Anthony Reyes',
-    role: 'Owner, Reyes Construction Group',
-    quote:
-      'We had repeat theft on a job site until HALO Security took over. The theft stopped, and their guards integrated seamlessly with our crew and GC partners.',
-  },
-]
-
-export const careerOpenings = [
-  {
-    title: 'Armed Security Officer',
-    location: 'Metro coverage',
-    type: 'Full-time',
-    summary: 'Lead posts for commercial and industrial sites with disciplined presence and detailed reporting.',
-    requirements: ['Active armed certification', 'Clean background and driving record', 'Excellent communication'],
-  },
-  {
-    title: 'Mobile Patrol Supervisor',
-    location: 'Metro + regional',
-    type: 'Full-time',
-    summary: 'Manage mobile patrol routes, mentor officers, and ensure rapid, accurate incident response.',
-    requirements: ['Supervisory experience', 'Night and weekend availability', 'Report writing expertise'],
-  },
-  {
-    title: 'Security Specialist (Residential)',
-    location: 'Premium neighborhoods',
-    type: 'Part-time / Flex',
-    summary: 'Discreet residential coverage with concierge-level service and strong situational awareness.',
-    requirements: ['Customer-first mindset', 'Conflict de-escalation skills', 'Professional appearance'],
-  },
-]
-
 export const contactDetails = {
-  phone: '(555) 010-0247',
-  email: 'dispatch@halosecurity.co',
+  phone: '360-988-3204',
+  email: 'info@haloprotectionservices.com',
   hours: '24/7 Dispatch',
   serviceAreas: ['Metro core', 'Surrounding counties', 'Regional deployments by request'],
-  address: 'Operations Office — by appointment only',
 }
-
-export const quickLinks = [
-  { label: 'Book a Call', href: '/call' },
-  { label: 'Contact Dispatch', href: '/contact' },
-  { label: 'Services', href: '/services' },
-  { label: 'Careers', href: '/careers' },
-]

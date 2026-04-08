@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { navLinks } from '../lib/content'
+import { brandName, navLinks } from '../lib/content'
 import { cn } from '../lib/utils'
 
 export function Header() {
@@ -21,7 +21,7 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-8">
         <Link to="/" className="flex items-center gap-2 text-lg font-semibold tracking-tight text-white">
           <span className="h-2 w-2 rounded-full bg-accent-soft shadow-[0_0_18px_rgba(34,211,238,0.8)]" />
-          HALO Security
+          {brandName}
         </Link>
         <nav className="hidden items-center gap-8 text-sm font-semibold text-slate-200 lg:flex">
           {navLinks.map((link) => (

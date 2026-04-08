@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import type { CSSProperties, ReactNode } from 'react'
 import { cn } from '../lib/utils'
 import { Badge } from './Badge'
 
@@ -9,6 +9,7 @@ interface SectionProps {
   children: ReactNode
   className?: string
   align?: 'left' | 'center'
+  style?: CSSProperties
 }
 
 export function Section({
@@ -18,10 +19,11 @@ export function Section({
   children,
   className,
   align = 'left',
+  style,
 }: SectionProps) {
   const isCenter = align === 'center'
   return (
-    <section className={cn('py-16 sm:py-20', className)}>
+    <section className={cn('py-16 sm:py-20', className)} style={style}>
       <div className="mx-auto max-w-6xl px-4 sm:px-8">
         {(eyebrow || title || description) && (
           <div

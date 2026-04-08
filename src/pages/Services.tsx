@@ -1,9 +1,7 @@
-import { useNavigate } from 'react-router-dom'
 import { Badge } from '../components/Badge'
-import { Button } from '../components/Button'
 import { Card } from '../components/Card'
 import { Section } from '../components/Section'
-import { industries, services, trustSignals } from '../lib/content'
+import { heroImageUrl, industries, services } from '../lib/content'
 import { usePageTitle } from '../lib/seo'
 
 const coverageModels = [
@@ -26,15 +24,16 @@ const coverageModels = [
 
 function ServicesPage() {
   usePageTitle('Services')
-  const navigate = useNavigate()
 
   return (
     <>
       <Section
         eyebrow="Services"
         title="Security coverage built for high-stakes environments"
-        description="HALO Security delivers private security, armed officers, and mobile patrols across residential, commercial, construction, and industrial sites."
-        className="pt-10"
+        className="bg-base bg-cover bg-center pt-10"
+        style={{
+          backgroundImage: `linear-gradient(to bottom, rgba(7, 10, 18, 0.95), rgba(7, 10, 18, 0.88), rgba(7, 10, 18, 0.92)), url('${heroImageUrl}')`,
+        }}
       >
         <div className="grid gap-6 md:grid-cols-3">
           {services.map((service) => (
@@ -60,7 +59,6 @@ function ServicesPage() {
       <Section
         eyebrow="Coverage models"
         title="Match the posture to your property and risk profile"
-        description="From concierge-grade presence to armed-ready patrols, we tailor coverage that balances deterrence, response, and guest experience."
       >
         <div className="grid gap-6 md:grid-cols-3">
           {coverageModels.map((model) => (
@@ -83,40 +81,14 @@ function ServicesPage() {
       <Section
         eyebrow="Industry expertise"
         title="Experienced in busy lobbies, active job sites, and critical infrastructure"
-        description="We integrate with your operations team and contractors, delivering clear communication and accountable reporting."
       >
         <div className="grid gap-6 md:grid-cols-2">
           {industries.map((industry) => (
             <Card key={industry.name} className="border-white/5 bg-white/5 p-6">
-              <div className="flex items-center justify-between">
-                <h4 className="text-lg font-semibold text-white">{industry.name}</h4>
-                <Badge variant="outline">Trusted</Badge>
-              </div>
+              <h4 className="text-lg font-semibold text-white">{industry.name}</h4>
               <p className="mt-3 text-sm text-slate-300">{industry.detail}</p>
             </Card>
           ))}
-        </div>
-      </Section>
-
-      <Section
-        align="center"
-        eyebrow="Assurance"
-        title="Trusted, trained, and ready to mobilize"
-        description="We maintain tight hiring standards, armed certification, and round-the-clock supervision to keep coverage sharp."
-        className="pb-20"
-      >
-        <div className="flex flex-wrap justify-center gap-2">
-          {trustSignals.map((signal) => (
-            <Badge key={signal}>{signal}</Badge>
-          ))}
-        </div>
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <Button size="lg" onClick={() => navigate('/call')}>
-            Book a call
-          </Button>
-          <Button variant="ghost" size="lg" onClick={() => navigate('/contact')}>
-            Speak with dispatch
-          </Button>
         </div>
       </Section>
     </>
