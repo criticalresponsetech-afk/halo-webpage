@@ -8,9 +8,9 @@ export default async function handler(req, res) {
   const { name, email, message } = req.body;
 
   try {
-    await resend.emails.send({
+    const result = await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: "info@haloprotectionsvcs.com",
+      to: "yourpersonalemail@gmail.com", // TEMP: change this to your email
       subject: `Contact - ${name}`,
       html: `
         <p><b>Name:</b> ${name}</p>
@@ -19,10 +19,17 @@ export default async function handler(req, res) {
       `,
     });
 
-    res.status(200).json({ ok: true });
+    console.log("RESEND RESULT:", result);
+
+    if (result.error) {
+      console.error("RESEND ERROR:", result.error);
+      return res.status(500).json({ error: result.error });
+    }
+
+    return res.status(200).json({ ok: true, result });
+
   } catch (e) {
-    console.error(e);
-    res.status(500).json({ error: "failed" });
+    console.error("SERVER ERROR:", e);
+    return res.status(500).json({ error: "failed" });
   }
 }
-
