@@ -6,7 +6,6 @@ import { Input } from '../components/Input'
 import { Section } from '../components/Section'
 import { Textarea } from '../components/Textarea'
 import { contactDetails, heroImageUrl, trustSignals } from '../lib/content'
-import { submitLead } from '../lib/leads'
 import { usePageTitle } from '../lib/seo'
 import { useToast } from '../components/Toast'
 import type { ContactLeadPayload } from '../types/leads'
@@ -46,7 +45,19 @@ function ContactPage() {
 
     try {
       setLoading(true)
-      await submitLead('contact', form)
+
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: form.fullName,
+          email: form.email,
+          message: form.message,
+        }),
+      })
+
       pushToast({ title: 'Message sent', description: 'Dispatch will reach out shortly.', type: 'success' })
       setForm(initialState)
       setErrors({})
