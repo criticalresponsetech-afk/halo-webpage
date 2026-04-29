@@ -24,7 +24,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const result = await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: "yourpersonalemail@gmail.com", // TEMP: use your email for testing
+      to: "criticalresponsetech@gmail.com", // TEMP: use your email for testing
       subject: `Contact - ${name}`,
       html: `
         <p><b>Name:</b> ${name}</p>
