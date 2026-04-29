@@ -48,44 +48,50 @@ function HomePage() {
     try {
       setLoading(true)
 
+      const name = form.fullName.trim() || 'Unknown'
+      const email = form.email.trim() || 'Unknown'
+      const company = form.company.trim() || 'N/A'
+      const phone = form.phone.trim() || 'N/A'
+      const contactPreference = form.contactPreference || 'Phone'
+      const bestTime = form.bestTime.trim() || 'Unspecified'
+      const notes = form.notes?.trim() || 'None'
+
       const message = [
         'Callback Request',
         '',
-        `Name: ${form.fullName}`,
-        `Company: ${form.company}`,
-        `Phone: ${form.phone}`,
-        `Email: ${form.email}`,
+        `Name: ${name}`,
+        `Company: ${company}`,
+        `Phone: ${phone}`,
+        `Email: ${email}`,
         '',
-        `Preferred Contact: ${form.contactPreference}`,
-        `Best Time: ${form.bestTime}`,
+        `Preferred Contact: ${contactPreference}`,
+        `Best Time: ${bestTime}`,
         '',
         'Notes:',
-        form.notes?.trim() || 'None',
+        notes,
       ].join('\n')
 
-      const response = await fetch('/api/contact', {
+      const res = await fetch('/api/contact', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: form.fullName,
-          email: form.email,
+          name,
+          email,
           message,
         }),
       })
 
-      if (!response.ok) {
-        let errorMessage = `Request failed with status ${response.status}`
-        try {
-          const data = await response.json()
-          if (typeof data?.error === 'string' && data.error.trim()) {
-            errorMessage = data.error
-          }
-        } catch {
-          // Ignore JSON parse failures and use the status-based fallback.
-        }
-        throw new Error(errorMessage)
+      const data = await res.json()
+      console.log("HOME RESPONSE:", data)
+
+      if (!res.ok) {
+        throw new Error(
+          typeof data?.error === 'string' && data.error.trim()
+            ? data.error
+            : `Request failed with status ${res.status}`,
+        )
       }
 
       pushToast({
