@@ -1,10 +1,15 @@
 import { useNavigate } from 'react-router-dom'
 import { Button } from '../components/Button'
 import { Section } from '../components/Section'
-import { usePageTitle } from '../lib/seo'
+import { usePageSeo } from '../lib/seo'
 
 function NotFoundPage() {
-  usePageTitle('Not Found')
+  usePageSeo({
+    title: 'Page Not Found',
+    description: 'This page does not exist. Explore HALO Protection Services coverage pages instead.',
+    path: '/404',
+    noindex: true,
+  })
   const navigate = useNavigate()
 
   return (

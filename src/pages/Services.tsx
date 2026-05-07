@@ -2,7 +2,7 @@ import { Badge } from '../components/Badge'
 import { Card } from '../components/Card'
 import { Section } from '../components/Section'
 import { heroImageUrl, industries, services } from '../lib/content'
-import { usePageTitle } from '../lib/seo'
+import { usePageSeo } from '../lib/seo'
 
 const coverageModels = [
   {
@@ -23,7 +23,13 @@ const coverageModels = [
 ]
 
 function ServicesPage() {
-  usePageTitle('Services')
+  usePageSeo({
+    title: 'Security Services',
+    description:
+      'Explore HALO Protection Services coverage models including private security, armed officers, mobile patrols, healthcare security, courthouse security, and patrol operations.',
+    path: '/services',
+    image: heroImageUrl,
+  })
 
   return (
     <>

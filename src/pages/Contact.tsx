@@ -6,7 +6,7 @@ import { Input } from '../components/Input'
 import { Section } from '../components/Section'
 import { Textarea } from '../components/Textarea'
 import { contactDetails, heroImageUrl, trustSignals } from '../lib/content'
-import { usePageTitle } from '../lib/seo'
+import { usePageSeo } from '../lib/seo'
 import { useToast } from '../components/Toast'
 import type { ContactLeadPayload } from '../types/leads'
 
@@ -18,7 +18,13 @@ const initialState: ContactLeadPayload = {
 }
 
 function ContactPage() {
-  usePageTitle('Contact')
+  usePageSeo({
+    title: 'Contact Security Team',
+    description:
+      'Contact HALO Protection Services for security coverage requests, dispatch coordination, and site-specific support across residential, commercial, and industrial properties.',
+    path: '/contact',
+    image: heroImageUrl,
+  })
   const { pushToast } = useToast()
   const [form, setForm] = useState<ContactLeadPayload>(initialState)
   const [errors, setErrors] = useState<Partial<Record<keyof ContactLeadPayload, string>>>({})

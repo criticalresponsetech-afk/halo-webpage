@@ -5,9 +5,9 @@ import { Card } from '../components/Card'
 import { Input } from '../components/Input'
 import { Section } from '../components/Section'
 import { Select } from '../components/Select'
-import { contactDetails, trustSignals } from '../lib/content'
+import { contactDetails, heroImageUrl, trustSignals } from '../lib/content'
 import { submitLead } from '../lib/leads'
-import { usePageTitle } from '../lib/seo'
+import { usePageSeo } from '../lib/seo'
 import { useToast } from '../components/Toast'
 import type { CallbackLeadPayload } from '../types/leads'
 
@@ -22,7 +22,13 @@ const initialState: CallbackLeadPayload = {
 }
 
 function CallPage() {
-  usePageTitle('Book a Call')
+  usePageSeo({
+    title: 'Book a Security Call',
+    description:
+      'Request a callback with HALO Protection Services to review site risks, coverage options, and deployment timelines with a security lead.',
+    path: '/call',
+    image: heroImageUrl,
+  })
   const { pushToast } = useToast()
   const [form, setForm] = useState<CallbackLeadPayload>(initialState)
   const [errors, setErrors] = useState<Partial<Record<keyof CallbackLeadPayload, string>>>({})

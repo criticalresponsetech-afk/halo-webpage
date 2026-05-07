@@ -5,7 +5,7 @@ import { Button } from '../components/Button'
 import { Card } from '../components/Card'
 import { Input } from '../components/Input'
 import { brandName, heroImageUrl } from '../lib/content'
-import { usePageTitle } from '../lib/seo'
+import { usePageSeo } from '../lib/seo'
 import { useToast } from '../components/Toast'
 import type { CallbackLeadPayload } from '../types/leads'
 
@@ -20,7 +20,13 @@ const callbackInitial: CallbackLeadPayload = {
 }
 
 function HomePage() {
-  usePageTitle('Home')
+  usePageSeo({
+    title: 'Private Security Services',
+    description:
+      'HALO Protection Services delivers professional private security, armed security, and mobile patrol coverage with fast response and accountable on-site teams.',
+    path: '/',
+    image: heroImageUrl,
+  })
   const navigate = useNavigate()
   const { pushToast } = useToast()
   const [form, setForm] = useState<CallbackLeadPayload>(callbackInitial)
